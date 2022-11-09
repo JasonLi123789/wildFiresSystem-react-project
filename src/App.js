@@ -3,6 +3,7 @@ const bodyParser = require("body-parser");
 const fs = require("fs");
 const path = require("path");
 
+
 const app = express();
 app.use(bodyParser.urlencoded({extended: true}));
 
@@ -45,3 +46,13 @@ app.post("/", function(req, res){
 app.listen("3000", function(req, res){
     console.log("The bmi is running on port 3000");
 })
+
+// function App(){
+//     return (
+//         <div>
+//         <p>The county you entered is: {data_jsonfile}</p>
+//         </div>
+//     );
+// }
+
+// export default App;
