@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Weather Forecast</title>
+</head>
+<body>
+    
+    <form action="/" method="post">
+        <input type="text" name="county" placeholder="County">
+        <input type="datetime" name="date" placeholder="Date(xx/mm/yyyy)">
+        <input type="text" name="temp" placeholder="Temp">
+        <input type="text" name="humidity" placeholder="Humidity(%)">
+        <button type="submit" name="submit">Submit</button>
+
+        <!-- those should be the json file that we get from the AI team
+             and show them to the user -->
+
+        <!-- <input type="number" placeholder="30-day avg prec">
+        <input type="number" placeholder="60-day avg prec">
+        <input type="number" placeholder="90-day avg prec">
+        <input type="number" placeholder="Wildfire Probability"> -->
+    </form>
+
+    <script src="./scoure.js"></script>
+</body>
+</html>
