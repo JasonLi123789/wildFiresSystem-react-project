@@ -7,7 +7,8 @@ const app = express();
 app.use(bodyParser.urlencoded({extended: true}));
 
 app.get("/", function(req, res){
-    res.sendFile(__dirname+"/index.html");
+    console.log(__dirname)
+    res.sendFile("/Users/jason/amplifyapp"+"/public/index.html");
 });
 
 app.post("/", function(req, res){
