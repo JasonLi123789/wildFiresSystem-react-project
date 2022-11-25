@@ -1,58 +1,84 @@
-const express = require("express");
-const bodyParser = require("body-parser");
-const fs = require("fs");
-const path = require("path");
+import {useState} from 'react';
 
+const App = () => {
+  const [city, setCity] = useState('');
+  const [date, setDate] = useState('');
+  const [temp, setTemp] = useState('');
+  const [humidity, setHum] = useState('');
 
-const app = express();
-app.use(bodyParser.urlencoded({extended: true}));
+  const handleCityChange = event => {
+    setCity(event.target.value);
+    console.log('value is:', event.target.value);
+  };
+  const handleDateChange = event => {
+    setDate(event.target.value);
+    console.log('value is:', event.target.value);
+  };
+  const handleTempChange = event => {
+    setTemp(event.target.value);
+    console.log('value is:', event.target.value);
+  };
+  const handleHumChange = event => {
+    setHum(event.target.value);
+    console.log('value is:', event.target.value);
+  };
 
-app.get("/", function(req, res){
-    console.log(__dirname)
-    res.sendFile("/Users/jason/amplifyapp"+"/public/index.html");
-});
+  var content ={
+    Country: city,
+    Date: date,
+    Temp: temp,
+    Humidity: humidity
+  }
+  var data_jsonfile = JSON.stringify(content);
+  
+  
+  return (
+    <div id="alldata">
+    <div id="Divcity">
+      <input
+        type="text"
+        id="city"
+        name="city"
+        onChange={handleCityChange}
+        value={city}
+      />
+      <h2>City: {city}</h2>
 
-app.post("/", function(req, res){
-    var county = req.body.county;
-    var date = req.body.date;
-    var temp = Number(req.body.temp);
-    var humidity = Number(req.body.humidity);
+    </div>
+    <div id="Divdate">
+      <input
+        type="date"
+        id="date"
+        name="date"
+        onChange={handleDateChange}
+        value={date}
+      />
+      <h2>Date: {date}</h2>
+    </div>
+    <div id="DivTemp">
+      <input
+        type="Temp"
+        id="Temp"
+        name="Temp"
+        onChange={handleTempChange}
+        value={temp}
+      />
+      <h2>Temp: {temp}</h2>
+    </div>
+    <div id="DivHum">
+      <input
+        type="Hum"
+        id="Hum"
+        name="Hum"
+        onChange={handleHumChange}
+        value={humidity}
+      />
+      <h2>Humidity: {humidity}</h2>
+    </div>
+    <h2>JSONis: {data_jsonfile}</h2>
+</div>
+    
+  );
+};
 
-    var content = {
-        County : county,
-        Date: date,
-        Temp: temp,
-        Humidity: humidity,
-        _30_days_ave_prec: 0,
-        _60_days_ave_prec: 0,
-        _90_days_ave_prec: 0,
-        Wildfire_Probability: 0
-    }
-
-    var data_jsonfile = JSON.stringify(content);
-
-    var path_file = path.join(__dirname, "test.json");
-
-    fs.writeFile(path_file,data_jsonfile, function(err){
-        if (err){
-            return console.log(err);
-        }
-        console.log("The file is created at: " + path_file);
-    })
-
-    res.send("The county you entered is:" + data_jsonfile);
-})
-
-app.listen("3000", function(req, res){
-    console.log("The bmi is running on port 3000");
-})
-
-// function App(){
-//     return (
-//         <div>
-//         <p>The county you entered is: {data_jsonfile}</p>
-//         </div>
-//     );
-// }
-
-// export default App;
+export default App;
