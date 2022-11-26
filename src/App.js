@@ -1,84 +1,53 @@
-import {useState} from 'react';
+import React, {useState} from 'react';
 
-const App = () => {
-  const [city, setCity] = useState('');
-  const [date, setDate] = useState('');
-  const [temp, setTemp] = useState('');
-  const [humidity, setHum] = useState('');
+// const json_data = JSON.stringify(user_data)
 
-  const handleCityChange = event => {
-    setCity(event.target.value);
-    console.log('value is:', event.target.value);
-  };
-  const handleDateChange = event => {
-    setDate(event.target.value);
-    console.log('value is:', event.target.value);
-  };
-  const handleTempChange = event => {
-    setTemp(event.target.value);
-    console.log('value is:', event.target.value);
-  };
-  const handleHumChange = event => {
-    setHum(event.target.value);
-    console.log('value is:', event.target.value);
-  };
+function saveJSON(data, filename){
+  if(!data) {
+      alert('保存的数据为空');
+      return;
+  }
+  if(!filename) 
+      filename = 'json.json'
+  if(typeof data === 'object'){
+      data = JSON.stringify(data, undefined, 4)
+  }
+  var blob = new Blob([data], {type: 'text/json'}),
+  e = document.createEvent('MouseEvents'),
+  a = document.createElement('a')
+  a.download = filename
+  a.href = window.URL.createObjectURL(blob)
+  a.dataset.downloadurl = ['text/json', a.download, a.href].join(':')
+  e.initMouseEvent('click', true, false, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null)
+  a.dispatchEvent(e)
 
-  var content ={
-    Country: city,
+}
+function Submit_Data(){
+  var city = document.getElementById('city').value;
+  var date = document.getElementById('date').value;
+  var temp = document.getElementById('temp').value;
+  var hum = document.getElementById('hum').value;
+  console.log(city);
+  console.log(date);
+  console.log(temp);
+  console.log(hum);
+
+  const user_data = {
+    City: city,
     Date: date,
     Temp: temp,
-    Humidity: humidity
-  }
-  var data_jsonfile = JSON.stringify(content);
-  
-  
-  return (
-    <div id="alldata">
-    <div id="Divcity">
-      <input
-        type="text"
-        id="city"
-        name="city"
-        onChange={handleCityChange}
-        value={city}
-      />
-      <h2>City: {city}</h2>
+    Hum: hum
+}
+saveJSON(user_data, 'test.json')
+}
 
-    </div>
-    <div id="Divdate">
-      <input
-        type="date"
-        id="date"
-        name="date"
-        onChange={handleDateChange}
-        value={date}
-      />
-      <h2>Date: {date}</h2>
-    </div>
-    <div id="DivTemp">
-      <input
-        type="Temp"
-        id="Temp"
-        name="Temp"
-        onChange={handleTempChange}
-        value={temp}
-      />
-      <h2>Temp: {temp}</h2>
-    </div>
-    <div id="DivHum">
-      <input
-        type="Hum"
-        id="Hum"
-        name="Hum"
-        onChange={handleHumChange}
-        value={humidity}
-      />
-      <h2>Humidity: {humidity}</h2>
-    </div>
-    <h2>JSONis: {data_jsonfile}</h2>
-</div>
+const form = document.getElementById('form');
+
+form.addEventListener('submit', Submit_Data);
+
+const App = () => {
     
-  );
-};
+
+ };
 
 export default App;

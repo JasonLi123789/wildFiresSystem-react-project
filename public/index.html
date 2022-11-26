@@ -1,31 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css">
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <link href="/index.css" rel='stylesheet' type='text/css' media="all" />
+    <link rel="stylesheet" href="/j-forms.css">
     <title>Weather Forecast</title>
+
 </head>
+
 <body>
-    
-    <form action="/" method="post">
-        <input type="text" name="county" placeholder="County">
-        <input type="datetime" name="date" placeholder="Date(xx/mm/yyyy)">
-        <input type="text" name="temp" placeholder="Temp">
-        <input type="text" name="humidity" placeholder="Humidity(%)">
-        <button type="submit" name="submit">Submit</button>
-
-        <!-- those should be the json file that we get from the AI team
-             and show them to the user -->
-
-        <!-- <input type="number" placeholder="30-day avg prec">
-        <input type="number" placeholder="60-day avg prec">
-        <input type="number" placeholder="90-day avg prec">
-        <input type="number" placeholder="Wildfire Probability"> -->
-    </form>
     <div id="root"></div>
     <script type="moudle" src="../src/App.js"></script>
+    <h1 class="header-w3ls">Calnifornia Wildfire prediction</h1>
+    <div class="content-w3ls">
+        <div class="form-w3ls">
+            <form action="#" id="form" method="post">
+                <div class="content-wthree1">
+                    <div class="grid-agileits1">
+                        <div class="form-control">
+                            <label class="header">City<span>*</span></label>
+                            <input type="text" id="city" name="name" placeholder="Enter city name here"
+                                title="Please enter your Full Name" required="">
+                        </div>
+
+                        <div class="form-control">
+                            <label class="header">Date<span>*</span></label>
+                            <input type="date" id="date" name="email" placeholder="Enter the date"
+                                title="Please enter a Valid Email Address" required="">
+                        </div>
+                        <div class="form-control">
+                            <label class="header">Temperature<span>*</span></label>
+                            <input type="text" id="temp" name="phone" placeholder="Enter Temperature here"
+                                title="Please enter your Phone No" required="">
+                        </div>
+                        <div class="form-control">
+                            <label class="header">Humidity<span>*</span></label>
+                            <input type="text" id="hum" name="phone" placeholder="Enter Humidity here"
+                                title="Please enter your Phone No" required="">
+                        </div>
+                    </div>
+                </div>
+                <div class="wthreesubmitaits">
+                    <input type="submit" name = "sumbit" value="submit">
+                </div>
+            </form>
+        </div>
+    </div>
+    <script type="text/javascript" src="/App.js"></script>
 </body>
+
 </html>
