@@ -181,7 +181,7 @@ ul.w3-size li.white{
 	background:#fff;
 	height:50px;
 }
-input#temp, input#date, input#orgn, textarea#message,input#city,input#hum {
+input#temp, input#date, input#orgn, textarea#message,input#county,input#hum {
     border: none;
     color: #fff;
     text-align: justify;
@@ -194,7 +194,7 @@ input#temp, input#date, input#orgn, textarea#message,input#city,input#hum {
 }
 
 
-input#temp,input#date,input#orgn,input#city,input#hum {
+input#temp,input#date,input#orgn,input#county,input#hum {
 	height:40px;
 	padding:0 15px;
 	width:92.2%;

@@ -4,7 +4,7 @@ import React, {useState} from 'react';
 
 function saveJSON(data, filename){
   if(!data) {
-      alert('保存的数据为空');
+      alert('There is no saving data');
       return;
   }
   if(!filename) 
@@ -23,20 +23,24 @@ function saveJSON(data, filename){
 
 }
 function Submit_Data(){
-  var city = document.getElementById('city').value;
+  var county = document.getElementById('county').value;
   var date = document.getElementById('date').value;
   var temp = document.getElementById('temp').value;
   var hum = document.getElementById('hum').value;
-  console.log(city);
+  
+  console.log(county);
   console.log(date);
   console.log(temp);
   console.log(hum);
 
   const user_data = {
-    City: city,
+    County: county,
     Date: date,
     Temp: temp,
-    Hum: hum
+    Hum: hum,
+    Day_avg_prec_30: 0.0,
+    Day_avg_prec_60: 0.0,
+    Day_avg_prec_90: 0.0
 }
 saveJSON(user_data, 'test.json')
 }
