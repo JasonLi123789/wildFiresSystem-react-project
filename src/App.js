@@ -34,13 +34,13 @@ function Submit_Data(){
   console.log(hum);
 
   const user_data = {
-    County: county,
-    Date: date,
-    Temp: temp,
-    Hum: hum,
-    Day_avg_prec_30: 0.0,
-    Day_avg_prec_60: 0.0,
-    Day_avg_prec_90: 0.0
+    "County": county,
+    "datetime": date,
+    "temp": temp,
+    "humidity": hum,
+    "30-day avg prec": 0.0,
+    "60-day avg prec": 0.0,
+    "90-day avg prec": 0.0
 }
 saveJSON(user_data, 'test.json')
 }
