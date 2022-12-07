@@ -181,7 +181,8 @@ ul.w3-size li.white{
 	background:#fff;
 	height:50px;
 }
-input#temp, input#date, input#orgn, textarea#message,input#county,input#hum {
+input#temp, input#date, input#orgn, textarea#message,input#county,input#hum,
+input#day30,input#day60,input#day90{
     border: none;
     color: #fff;
     text-align: justify;
@@ -194,7 +195,8 @@ input#temp, input#date, input#orgn, textarea#message,input#county,input#hum {
 }
 
 
-input#temp,input#date,input#orgn,input#county,input#hum {
+input#temp,input#date,input#orgn,input#county,input#hum,
+input#day30,input#day60,input#day90 {
 	height:40px;
 	padding:0 15px;
 	width:92.2%;
@@ -678,3 +680,10 @@ label.header {
     margin-top: 24px;
 }
 }
+
+.res {
+    padding: 5px;
+    margin-top: 20px;
+    background-color: aliceblue;
+    border-radius: 10px;
+  }

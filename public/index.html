@@ -1,62 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <link href="/index.css" rel='stylesheet' type='text/css' media="all" />
-    <link rel="stylesheet" href="/j-forms.css">
+    <link href="/index.css" rel="stylesheet" type="text/css" media="all" />
+    <link rel="stylesheet" href="/j-forms.css" />
     <!-- <link rel="icon" type="image/png" href="/public/icon.png"/> -->
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
     <title>Wildfire Prediction System</title>
+  </head>
 
-</head>
-
-<body>
+  <body>
     <div id="root"></div>
     <script type="moudle" src="../src/App.js"></script>
     <h1 class="header-w3ls">Calnifornia Wildfire prediction</h1>
     <div class="content-w3ls">
-        <div class="form-w3ls">
-            <form action="#" id="form" method="post">
-                <div class="content-wthree1">
-                    <div class="grid-agileits1">
-                        <div class="form-control">
-                            <label class="header">County<span>*</span></label>
-                            <input type="text" id="county" name="name" placeholder="Enter county name here"
-                                title="Please enter your Full Name" required="">
-                        </div>
+      <div class="form-w3ls">
+        <div action="http://localhost:3001" id="form" method="post">
+          <div class="content-wthree1">
+            <div class="grid-agileits1">
+              <div class="form-control">
+                <label class="header">County<span>*</span></label>
+                <input
+                  type="text"
+                  id="county"
+                  placeholder="Enter county name here"
+                  required=""
+                />
+              </div>
 
-                        <div class="form-control">
-                            <label class="header">Date<span>*</span></label>
-                            <input type="date" id="date" name="email" placeholder="Enter the date"
-                                title="Please enter a Valid Email Address" required="">
-                        </div>
-                        <div class="form-control">
-                            <label class="header">Temperature(In Celsius)<span>*</span></label>
-                            <input type="text" id="temp" name="phone" placeholder="Enter Temperature in CELSIUS here"
-                                title="Please enter your Phone No" required="">
-                        </div>
-                        <div class="form-control">
-                            <label class="header">Humidity(in %)<span>*</span></label>
-                            <input type="text" id="hum" name="phone" placeholder="Enter Humidity here"
-                                title="Please enter your Phone No" required="">
-                        </div>
-                    </div>
-                </div>
-                <div class="wthreesubmitaits">
-                    <input type="submit" name = "sumbit" value="submit">
-                </div>
-            </form>
+              <div class="form-control">
+                <label class="header">Date<span>*</span></label>
+                <input
+                  type="date"
+                  id="date"
+                  placeholder="Enter the date"
+                  required=""
+                />
+              </div>
+              <div class="form-control">
+                <label class="header">Temperature(In Celsius)<span>*</span></label>
+                <input
+                  type="text"
+                  id="temp"
+                  placeholder="Enter Temperature in CELSIUS here"
+                  required=""
+                />
+              </div>
+              <div class="form-control">
+                <label class="header">Humidity(in %)<span>*</span></label>
+                <input
+                  type="text"
+                  id="hum"
+                  placeholder="Enter Humidity here"
+                  required=""
+                />
+              </div>
+              
+              <div class="form-control">
+                <label class="header">30-day avg prec(inch)<span>*</span></label>
+                <input
+                  type="text"
+                  id="day30"
+                  placeholder="Enter 30-day avg here"
+                  required=""
+                />
+              </div>
+
+              <div class="form-control">
+                <label class="header">60-day avg prec(inch)<span>*</span></label>
+                <input
+                  type="text"
+                  id="day60"
+                  placeholder="Enter 60-day avg"
+                  required=""
+                />
+              </div>
+
+              <div class="form-control">
+                <label class="header">90-day avg prec(inch)<span>*</span></label>
+                <input
+                  type="text"
+                  id="day90"
+                  placeholder="Enter 90-day avg"
+                  required=""
+                />
+              </div>
+
+            </div>
+          </div>
+          <div class="wthreesubmitaits">
+            <input id="btn" type="submit" name="sumbit" value="submit" />
+            <input id="btn1" type="submit" name="sumbit" value="get data" />
+          </div>
         </div>
+      </div>
+      <div class="res" id="res"></div>
     </div>
     <script type="text/javascript" src="/App.js"></script>
-</body>
-
+  </body>
 </html>
