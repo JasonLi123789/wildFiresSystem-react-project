@@ -687,3 +687,15 @@ label.header {
     background-color: aliceblue;
     border-radius: 10px;
   }
+
+.map{
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+  }
+
+#googleMap{
+    width: 80%;
+    height: 400px;
+    margin: 20px auto;
+  }

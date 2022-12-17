@@ -8,7 +8,7 @@
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
     <link href="/index.css" rel="stylesheet" type="text/css" media="all" />
     <link rel="stylesheet" href="/j-forms.css" />
-    <!-- <link rel="icon" type="image/png" href="/public/icon.png"/> -->
+    <link rel="icon" type="image/png" href="/public/icon.png"/>
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
@@ -64,17 +64,17 @@
               </div>
               
               <div class="form-control">
-                <label class="header">30-day avg prec(inch)<span>*</span></label>
+                <label class="header">30 day average prec(in %)<span>*</span></label>
                 <input
                   type="text"
                   id="day30"
-                  placeholder="Enter 30-day avg here"
+                  placeholder="Enter 30-day avg"
                   required=""
                 />
               </div>
 
               <div class="form-control">
-                <label class="header">60-day avg prec(inch)<span>*</span></label>
+                <label class="header">60 day average prec(in %)<span>*</span></label>
                 <input
                   type="text"
                   id="day60"
@@ -84,7 +84,7 @@
               </div>
 
               <div class="form-control">
-                <label class="header">90-day avg prec(inch)<span>*</span></label>
+                <label class="header">90 day average prec(in %)<span>*</span></label>
                 <input
                   type="text"
                   id="day90"
@@ -98,11 +98,14 @@
           <div class="wthreesubmitaits">
             <input id="btn" type="submit" name="sumbit" value="submit" />
             <input id="btn1" type="submit" name="sumbit" value="get data" />
+            <input id="btn2" type="submit" name="sumbit" value="Show map" />
           </div>
         </div>
       </div>
       <div class="res" id="res"></div>
     </div>
+    
     <script type="text/javascript" src="/App.js"></script>
+    
   </body>
 </html>
